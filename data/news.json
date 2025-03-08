@@ -1,0 +1,66 @@
+[
+  {
+    "category": "Engineering",
+    "title": "Revolutionizing software development with cutting-edge tools",
+    "description": "Our latest engineering tools are designed to streamline workflows and boost productivity. Discover how these innovations are transforming the software...",
+    "authors": [
+      { "name": "Remy Sharp", "image": "https://placehold.co/20" },
+      { "name": "Travis Howard", "image": "https://placehold.co/20" }
+    ],
+    "date": "July 14, 2021",
+    "image": "https://placehold.co/600x400",
+    "size": "large"
+  },
+  {
+    "category": "Product",
+    "title": "Innovative product features that drive success",
+    "description": "Explore the key features of our latest product release that are helping businesses achieve their goals. From user-friendly interfaces to robust...",
+    "authors": [{ "name": "Erica Johns", "image": "https://placehold.co/20" }],
+    "date": "July 14, 2021",
+    "image": "https://placehold.co/600x400",
+    "size": "large"
+  },
+  {
+    "category": "Design",
+    "title": "Designing for the future: trends and insights",
+    "description": "Stay ahead of the curve with the latest design trends and insights. Our design team shares their...",
+    "authors": [
+      { "name": "Kate Morrison", "image": "https://placehold.co/20" }
+    ],
+    "date": "July 14, 2021",
+    "image": "https://images.pexels.com/photos/31020247/pexels-photo-31020247/free-photo-of-anemona-roja.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "size": "medium"
+  },
+  {
+    "category": "Company",
+    "title": "Our company’s journey: milestones and achievements",
+    "description": "Take a look at our company's journey and the milestones we've achieved along the way. From...",
+    "authors": [{ "name": "Cindy Baker", "image": "https://placehold.co/20" }],
+    "date": "July 14, 2021",
+    "image": null,
+    "size": "small"
+  },
+  {
+    "category": "Engineering",
+    "title": "Pioneering sustainable engineering solutions",
+    "description": "Learn about our commitment to sustainability and the innovative engineering solutions we're...",
+    "authors": [
+      { "name": "Agnes Walker", "image": "https://placehold.co/20" },
+      { "name": "Trevor Henderson", "image": "https://placehold.co/20" }
+    ],
+    "date": "July 14, 2021",
+    "image": null,
+    "size": "small"
+  },
+  {
+    "category": "Product",
+    "title": "Maximizing efficiency with our latest product updates",
+    "description": "Our recent product updates are designed to help you maximize efficiency and achieve more. Get a...",
+    "authors": [
+      { "name": "Travis Howard", "image": "https://placehold.co/20" }
+    ],
+    "date": "July 14, 2021",
+    "image": "https://images.pexels.com/photos/31036812/pexels-photo-31036812/free-photo-of-primer-plano-de-una-vibrante-margarita-rosa-en-flor.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "size": "medium"
+  }
+]
