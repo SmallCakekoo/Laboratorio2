@@ -6,11 +6,11 @@ class LastDial extends HTMLElement {
     this.shadowRoot.innerHTML = `
        <style>
         .pagination {
-            font-family: Century Gothic, sans-serif;
-             display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 80px;
+            font-family: helvetica, arial, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 80px;
         }
          .page {
             width: 32px;

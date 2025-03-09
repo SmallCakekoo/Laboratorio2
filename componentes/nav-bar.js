@@ -8,15 +8,15 @@ class NavBar extends HTMLElement {
 
 .contenedornavbar {
   display: flex;
-  font-family: century gothic;
+  font-family: helvetica, arial, sans-serif;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.719);
   padding: 10px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  max-width: 90%;
-  margin: 20px auto;
+  max-width: 60%;
+  margin: 50px auto 50px  auto;
 }
 
 .logo-nav {

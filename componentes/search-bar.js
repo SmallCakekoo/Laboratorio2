@@ -15,6 +15,8 @@ class SearchBar extends HTMLElement {
             display: inline-flex;
             align-items: center;
             font-family: Arial, sans-serif;
+            padding-left: 29rem;
+          
           }
           .search-container {
             display: flex;

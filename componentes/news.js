@@ -1,13 +1,9 @@
 class NewsCard extends HTMLElement {
     constructor() {
       super();
-      this.attachShadow({ mode: "open" });
-    }
-  
+      this.attachShadow({ mode: "open" });}
     connectedCallback() {
-      this.render();
-    }
-  
+      this.render(); }
     render() {
       this.shadowRoot.innerHTML = `
         <style>

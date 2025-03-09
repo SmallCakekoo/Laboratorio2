@@ -7,11 +7,10 @@ class MainHeader extends HTMLElement {
 
 <style>
 .container {
-  font-family: century gothic;
-  max-width: auto;
-  margin: 10px auto;
+  font-family: helvetica, arial, sans-serif;
+  max-width: 64%;
+  margin: 0 auto;
   padding: 5px;
-  padding-left: 70px;
 }
 
 h1 {
@@ -52,7 +51,7 @@ h1 {
   cursor: pointer;
   border-radius: 20px;
   padding: 8px 12px;
-  font-family: Century Gothic;
+  font-family: helvetica, arial, sans-serif;
   transition: background 0.3s ease;
 }
 
@@ -83,7 +82,9 @@ h1 {
                     <li><button>Product</button></li>
                     <li><button>Design</button></li>
                     <li><button>Engineering</button></li>
+                    <search-bar></search-bar>
                 </ul>
+
             </nav>
         </div>
     </header>
