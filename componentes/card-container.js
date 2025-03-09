@@ -62,6 +62,8 @@ export default class CardContainer extends HTMLElement {
     </div>
     <card-medium></card-medium>
   </div>
+    <last-dial></last-dial>
+    
 </div>
 
       `;

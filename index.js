@@ -5,9 +5,9 @@ import CardSmall from "./componentes/cards/card-small.js";
 import CardLarge from "./componentes/cards/card-large.js";
 import CardContainer from "./componentes/card-container.js";
 import LastDial from "./componentes/dial.js";
-import './componentes/search-bar.js'
-import './componentes/news.js'
-import './componentes/footer.js'
+import SearchBar from "./componentes/search-bar.js";
+import NewsCard from './componentes/news.js';
+import FooterComponent from "./componentes/footer.js";
 
 customElements.define("nav-bar", NavBar);
 customElements.define("main-header", MainHeader);
@@ -16,4 +16,8 @@ customElements.define("card-small", CardSmall);
 customElements.define("card-large", CardLarge);
 customElements.define("card-container", CardContainer);
 customElements.define("last-dial", LastDial);
+customElements.define("search-bar", SearchBar);
+customElements.define("news-card", NewsCard);
+customElements.define("footer-container", FooterComponent);
+
 
