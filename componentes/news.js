@@ -23,32 +23,32 @@ export default class NewsCard extends HTMLElement {
       <style>
         :host {
           display: block;
-          font-family: Arial, sans-serif;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          padding: 15px;
-          max-width: 500px;
-          background: white;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          margin-bottom: 10px;
+          font-family: 'Inter', sans-serif;
+          max-width : 63%;
+          margin: 0 auto;
         }
         .news-container {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+          gap: 50px;
         }
         .news-card {
-          border-bottom: 1px solid #ddd;
-          padding-bottom: 10px;
+          background: white;
+          padding: 25px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 180px;
         }
         .category {
-          font-size: 12px;
+          font-size: 14px;
           color: #777;
         }
         .title {
-          font-size: 18px;
+          font-size: 22px;
           font-weight: bold;
-          margin: 5px 0;
+          margin: 10px 0;
         }
         .description {
           font-size: 14px;
@@ -60,14 +60,18 @@ export default class NewsCard extends HTMLElement {
           justify-content: space-between;
           align-items: center;
           margin-top: 10px;
+          font-size: 14px;
+          color: #777;
         }
         .authors {
-          font-size: 12px;
-          color: #777;
+          display: flex;
+          align-items: center;
+          gap: 8px;
         }
-        .date {
-          font-size: 12px;
-          color: #777;
+        .authors img {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
         }
       </style>
       <div class="news-container">
@@ -86,8 +90,3 @@ export default class NewsCard extends HTMLElement {
     `;
   }
 }
-
-
-
-
-
