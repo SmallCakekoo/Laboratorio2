@@ -108,11 +108,6 @@ export default class FooterComponent extends HTMLElement {
             <a href="#">Contact</a>
           </div>
         </div>
-        <div class="social-icons">
-          <a href="#">🔗</a>
-          <a href="#">✖</a>
-          <a href="#">🔗</a>
-        </div>
       </div>
     `;
   }

@@ -4,11 +4,21 @@ export default class NewsCard extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  connectedCallback() {
-    this.render();
+  async connectedCallback() {
+    await this.fetchData();
   }
 
-  render() {
+  async fetchData() {
+    try {
+      const response = await fetch('../data/news.json');
+      const newsData = await response.json();
+      this.render(newsData.articles);
+    } catch (error) {
+      console.error("Error fetching news data:", error);
+    }
+  }
+
+  render(articles = []) {
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -20,6 +30,16 @@ export default class NewsCard extends HTMLElement {
           max-width: 500px;
           background: white;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          margin-bottom: 10px;
+        }
+        .news-container {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .news-card {
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 10px;
         }
         .category {
           font-size: 12px;
@@ -42,33 +62,32 @@ export default class NewsCard extends HTMLElement {
           margin-top: 10px;
         }
         .authors {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-        }
-        .authors img {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
+          font-size: 12px;
+          color: #777;
         }
         .date {
           font-size: 12px;
           color: #777;
         }
       </style>
-      <div class="category">Engineering</div>
-      <div class="title">The future of AI in software engineering</div>
-      <div class="description">Artificial intelligence is revolutionizing software engineering. Explore how AI-driven tools are enhancing development processes and improving software...</div>
-      <div class="footer">
-        <div class="authors">
-          <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="Author 1">
-          <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="Author 2">
-          <span>Remy Sharp, Travis Howard</span>
-        </div>
-        <div class="date">July 14, 2021</div>
+      <div class="news-container">
+        ${articles.map(article => `
+          <div class="news-card">
+            <div class="category">${article.category || 'Unknown'}</div>
+            <div class="title">${article.title || 'No title available'}</div>
+            <div class="description">${article.description || 'No description available'}</div>
+            <div class="footer">
+              <div class="authors">${article.authors || 'Unknown author'}</div>
+              <div class="date">${article.date || 'Unknown date'}</div>
+            </div>
+          </div>
+        `).join('')}
       </div>
     `;
   }
 }
+
+
+
 
 
