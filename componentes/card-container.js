@@ -39,8 +39,6 @@ export default class CardContainer extends HTMLElement {
     gap: 10px;
   }
 
-
-  /* Ajustes responsivos */
   @media (max-width: 800px) {
     .top-row,
     .bottom-row {

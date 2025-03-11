@@ -41,10 +41,9 @@ class CardSmall extends HTMLElement {
         }
 
         .card-content {
-        padding-right: 15px;  
-        padding-left: 15px;
-        padding-bottom: 15px;
-        
+          padding-right: 15px;  
+          padding-left: 15px;
+          padding-bottom: 15px;
         }
 
         .category {
@@ -64,38 +63,38 @@ class CardSmall extends HTMLElement {
         }
 
         .card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #eee;
-  padding: 10px 15px;
-}
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #eee;
+          padding: 10px 15px;
+        }
 
-.authors {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  justify-content: center;
-}
+        .authors {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          justify-content: center;
+        }
 
-.authors img {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-   margin-right: -7px;
-  border: 3px solid white;
-}
+        .authors img {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: -7px;
+          border: 3px solid white;
+        }
 
-.author-names {
- font-size: 13px;
-  color: gray;
-  padding-left: 5px;
-}
+        .author-names {
+          font-size: 13px;
+          color: gray;
+          padding-left: 5px;
+        }
   
-.date {
-  font-size: 12px;
-  color: gray;
-}
+        .date {
+          font-size: 12px;
+          color: gray;
+        }
 
       </style>
 

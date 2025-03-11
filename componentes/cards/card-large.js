@@ -9,8 +9,7 @@ class CardLarge extends HTMLElement {
       const response = await fetch("./data/news.json"); 
       const data = await response.json();
       const articles = data.articlescards;
-
-     
+      
       const index = parseInt(this.getAttribute("index"), 10) || 0;
       const article = articles[index];
 
@@ -75,34 +74,34 @@ class CardLarge extends HTMLElement {
         }
 
         .authors {
-  display: flex;
-  align-items: center;
-}
+          display: flex;
+          align-items: center;
+        }
 
-.author-avatars-names {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-}
+        .author-avatars-names {
+          display: flex;
+          align-items: center;
+          gap: 10px; 
+        }
 
-.avatars {
-  display: flex;
-}
+        .avatars {
+          display: flex;
+        }
 
-.avatars img {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  margin-right: -7px;
-  border: 3px solid white;
-}
+        .avatars img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          margin-right: -7px;
+          border: 3px solid white;
+        }
 
-.names {
-  font-size: 13px;
-  color: gray;
-  display: flex;
-  gap: 5px;
-}
+        .names {
+          font-size: 13px;
+          color: gray;
+          display: flex;
+          gap: 5px;
+        }
 
         .date {
           font-size: 12px;
@@ -118,26 +117,24 @@ class CardLarge extends HTMLElement {
           <p class="description">${article.description}</p>
         </div>
         <div class="card-footer">
-  <div class="authors">
-    <div class="author-avatars-names">
-      <div class="avatars">
-        ${article.authors
-          .map((author) => `<img src="${author.avatar}" alt="${author.name}">`)
-          .join("")}
+          <div class="authors">
+            <div class="author-avatars-names">
+              <div class="avatars">
+                ${article.authors
+                  .map((author) => `<img src="${author.avatar}" alt="${author.name}">`)
+                  .join("")}
+              </div>
+              <div class="names">
+                ${article.authors
+                  .map((author) => `<span>${author.name}</span>`)
+                  .join(", ")}
+              </div>
+            </div>
+          </div>
+          <span class="date">${article.date}</span>
+        </div>
       </div>
-      <div class="names">
-        ${article.authors
-          .map((author) => `<span>${author.name}</span>`)
-          .join(", ")}
-      </div>
-    </div>
-  </div>
-  <span class="date">${article.date}</span>
-</div>
-
-
-      </div>
-      `;
+    `;
   }
 }
 

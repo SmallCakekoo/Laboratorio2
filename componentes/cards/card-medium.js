@@ -6,7 +6,7 @@ class CardMedium extends HTMLElement {
 
   async connectedCallback() {
     try {
-      const response = await fetch("./data/news.json"); 
+      const response = await fetch("./data/news.json");
       const data = await response.json();
       const articles = data.articlescards;
 
