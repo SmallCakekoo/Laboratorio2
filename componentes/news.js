@@ -10,7 +10,7 @@ export default class NewsCard extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch('../data/news.json');
+      const response = await fetch("../data/cards.json");
       const newsData = await response.json();
       this.render(newsData.articles);
     } catch (error) {
@@ -75,17 +75,23 @@ export default class NewsCard extends HTMLElement {
         }
       </style>
       <div class="news-container">
-        ${articles.map(article => `
+        ${articles
+          .map(
+            (article) => `
           <div class="news-card">
-            <div class="category">${article.category || 'Unknown'}</div>
-            <div class="title">${article.title || 'No title available'}</div>
-            <div class="description">${article.description || 'No description available'}</div>
+            <div class="category">${article.category || "Unknown"}</div>
+            <div class="title">${article.title || "No title available"}</div>
+            <div class="description">${
+              article.description || "No description available"
+            }</div>
             <div class="footer">
-              <div class="authors">${article.authors || 'Unknown author'}</div>
-              <div class="date">${article.date || 'Unknown date'}</div>
+              <div class="authors">${article.authors || "Unknown author"}</div>
+              <div class="date">${article.date || "Unknown date"}</div>
             </div>
           </div>
-        `).join('')}
+        `
+          )
+          .join("")}
       </div>
     `;
   }
