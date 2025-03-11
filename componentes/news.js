@@ -10,7 +10,7 @@ export default class NewsCard extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch('../data/cards.json');
+      const response = await fetch('./data/cards.json');
       const newsData = await response.json();
       this.render(newsData.articles);
     } catch (error) {
