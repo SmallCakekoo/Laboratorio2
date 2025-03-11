@@ -10,7 +10,7 @@ export default class NewsCard extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch('../data/news.json');
+      const response = await fetch('../data/cards.json');
       const newsData = await response.json();
       this.render(newsData.articles);
     } catch (error) {
@@ -24,7 +24,7 @@ export default class NewsCard extends HTMLElement {
         :host {
           display: block;
           font-family: 'Inter', sans-serif;
-          max-width : 63%;
+          max-width : 65%;
           margin: 0 auto;
         }
         .news-container {
@@ -38,15 +38,13 @@ export default class NewsCard extends HTMLElement {
           border-radius: 10px;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          min-height: 180px;
         }
         .category {
-          font-size: 14px;
+          font-size: 13px;
           color: #777;
         }
         .title {
-          font-size: 22px;
+          font-size: 19px;
           font-weight: bold;
           margin: 10px 0;
         }
@@ -60,7 +58,7 @@ export default class NewsCard extends HTMLElement {
           justify-content: space-between;
           align-items: center;
           margin-top: 10px;
-          font-size: 14px;
+          font-size: 12px;
           color: #777;
         }
         .authors {

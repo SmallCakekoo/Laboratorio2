@@ -9,8 +9,12 @@ class LastDial extends HTMLElement {
             font-family: helvetica, arial, sans-serif;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
-            margin-left: 80px;
+            width: 100%; 
+            margin-top: 30px;
+            margin-bottom: 8rem;
+            max-width: 60%;
         }
          .page {
             width: 32px;
