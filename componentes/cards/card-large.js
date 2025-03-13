@@ -1,98 +1,140 @@
 class CardLarge extends HTMLElement {
   constructor() {
     super();
-    console.log("Componente creado");
     this.attachShadow({ mode: "open" });
+  }
+
+  async connectedCallback() {
+    try {
+      const response = await fetch("./data/news.json"); 
+      const data = await response.json();
+      const articles = data.articlescards;
+      
+      const index = parseInt(this.getAttribute("index"), 10) || 0;
+      const article = articles[index];
+
+      this.render(article);
+    } catch (error) {
+      console.error("Nuh uh, error del fetch:", error);
+    }
+  }
+
+  render(article) {
+    if (!article) {
+      this.shadowRoot.innerHTML = `<p>Error: No hay data, pailas</p>`;
+      return;
+    }
+
     this.shadowRoot.innerHTML = `
       <style>
-      
-.card-large {
-  width: 36.875rem;
-  height: auto;
-  background: white;
-  border-radius: 0.625rem;
-  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  font-family: Century Gothic, sans-serif;
-  display: flex;
-  flex-direction: column;
-}
+        .card-large {
+          width: 590px; 
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          font-family: Century Gothic, sans-serif;
+          margin: 5px;
+          display: flex;
+          flex-direction: column;
+        }
 
-.card-large img {
-  width: 100%;
-  height: 20rem;
-  object-fit: cover;
-}
+        .card-large img.banner {
+          width: 100%;
+          height: 320px;
+          object-fit: cover; 
+        }
 
-.card-content {
-  padding: 0.9375rem;
-}
+        .card-content {
+          padding: 15px;
+        }
 
-.category {
-  font-size: 0.75rem;
-  color: gray;
-}
+        .category {
+          font-size: 12px;
+          color: gray;
+        }
 
-.title {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin: 0.3125rem 0;
-}
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 5px 0;
+        }
 
-.description {
-  font-size: 0.875rem;
-  color: gray;
-}
+        .description {
+          font-size: 14px;
+          color: gray;
+        }
 
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 0.0625rem solid #eee;
-  padding: 1.25rem 0.9375rem;
-}
+        .card-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #eee;
+          padding: 20px 15px;
+        }
 
-.author {
-  display: flex;
-  align-items: center;
-  font-size: 0.75rem;
-}
+        .authors {
+          display: flex;
+          align-items: center;
+        }
 
-.author img {
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 50%;
-  margin-right: 0.3125rem;
-}
+        .author-avatars-names {
+          display: flex;
+          align-items: center;
+          gap: 10px; 
+        }
 
-.date {
-  font-size: 0.75rem;
-  color: gray;
-}
+        .avatars {
+          display: flex;
+        }
 
+        .avatars img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          margin-right: -7px;
+          border: 3px solid white;
+        }
+
+        .names {
+          font-size: 13px;
+          color: gray;
+          display: flex;
+          gap: 5px;
+        }
+
+        .date {
+          font-size: 12px;
+          color: gray;
+        }
       </style>
 
       <div class="card-large">
-      <img src="https://placehold.co/300x200" alt="Imagen de la noticia" />
-      <div class="card-content">
-        <p class="category">Design</p>
-        <p class="title">Designing for the future: trends and insights</p>
-        <p class="description">
-          Our latest engineering tools are designed to streamline workflows and boost productivity. Discover how these innovations are transforming the software development landscape.
-        </p>
+        <img class="banner" src="${article.image}" alt="Imagen de la noticia" />
+        <div class="card-content">
+          <p class="category">${article.category}</p>
+          <p class="title">${article.title}</p>
+          <p class="description">${article.description}</p>
+        </div>
+        <div class="card-footer">
+          <div class="authors">
+            <div class="author-avatars-names">
+              <div class="avatars">
+                ${article.authors
+                  .map((author) => `<img src="${author.avatar}" alt="${author.name}">`)
+                  .join("")}
+              </div>
+              <div class="names">
+                ${article.authors
+                  .map((author) => `<span>${author.name}</span>`)
+                  .join(", ")}
+              </div>
+            </div>
+          </div>
+          <span class="date">${article.date}</span>
+        </div>
       </div>
-      <div class="card-footer">
-        <div class="authors"></div>
-        <span class="date">July 14, 2021</span>
-      </div>
-    </div>
-      
-
-      `;
-  }
-
-  connectedCallback() {
-    console.log("Componente conectado");
+    `;
   }
 }
 

@@ -26,7 +26,9 @@ export default class FooterComponent extends HTMLElement {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0rem 5rem 0rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .newsletter {
@@ -67,7 +69,7 @@ export default class FooterComponent extends HTMLElement {
 
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   flex-wrap: wrap;
 }
 
@@ -89,38 +91,30 @@ export default class FooterComponent extends HTMLElement {
   margin-top: 1rem;
 }
 
-.social-icons a {
-  text-decoration: none;
-  font-size: 1.125rem;
-}
-
-/* Responsive Styles */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    gap: 2rem;
   }
-  .links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
+
   .newsletter {
+    width: 100%;
     max-width: 100%;
   }
-}
 
-@media (max-width: 480px) {
   .email-input {
     flex-direction: column;
     align-items: center;
   }
+
   .email-input input {
-    width: 100%;
+    max-width: 100%;
   }
-  .email-input button {
-    width: 100%;
+
+  .links {
+    justify-content: center;
+    text-align: center;
   }
 }
 

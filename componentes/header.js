@@ -49,7 +49,7 @@ h1 {
   font-size: 14px;
   cursor: pointer;
   border-radius: 20px;
-  padding: 8px 12px;
+  padding: 8px;
   font-family: helvetica, arial, sans-serif;
   transition: background 0.3s ease;
 }

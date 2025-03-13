@@ -24,14 +24,19 @@ export default class NewsCard extends HTMLElement {
 :host {
   display: block;
   font-family: 'Inter', sans-serif;
-  width: 100%;
-  max-width: 80rem;
+  width: 78rem;
   margin: 0 auto;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 1.5rem;
 }
 
 .news-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(31.25rem, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr)); 
 }
 
 .news-card {
@@ -59,6 +64,28 @@ export default class NewsCard extends HTMLElement {
   margin: 0.3125rem 0;
 }
 
+
+.authors {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+.authors img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: -7px;
+  border: 3px solid white;
+}
+
+.author-names {
+  font-size: 13px;
+  color: gray;
+  padding-left: 5px;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -68,18 +95,38 @@ export default class NewsCard extends HTMLElement {
   color: #777;
 
       </style>
+      <h1>Latest</h1>
       <div class="news-container">
-        ${articles.map(article => `
+        ${articles
+          .map(
+            (article) => `
+            
           <div class="news-card">
-            <div class="category">${article.category || 'Unknown'}</div>
-            <div class="title">${article.title || 'No title available'}</div>
-            <div class="description">${article.description || 'No description available'}</div>
+            <div class="category">${article.category || "Unknown"}</div>
+            <div class="title">${article.title || "No title available"}</div>
+            <div class="description">${
+              article.description || "No description available"
+            }</div>
             <div class="footer">
-              <div class="authors">${article.authors || 'Unknown author'}</div>
-              <div class="date">${article.date || 'Unknown date'}</div>
+                        <div class="authors">
+            <div class="author-images">
+              ${article.authors
+                .map(
+                  (author) =>
+                    `<img src="${author.avatar}" alt="${author.name}">`
+                )
+                .join("")}
+            </div>
+            <div class="author-names">
+              ${article.authors.map((author) => author.name).join(" & ")}
             </div>
           </div>
-        `).join('')}
+              <div class="date">${article.date || "Unknown date"}</div>
+            </div>
+          </div>
+        `
+          )
+          .join("")}
       </div>
     `;
   }
