@@ -8,35 +8,35 @@ class NavBar extends HTMLElement {
 
 .contenedornavbar {
   display: flex;
+  width: 70rem;
   font-family: helvetica, arial, sans-serif;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.719);
-  padding: 10px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  max-width: 60%;
-  margin: 50px auto 50px  auto;
+  padding: 0.625rem 1.25rem; 
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem; 
+  margin: 3.125rem auto; 
 }
 
 .logo-nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem; 
 }
 
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 0.9375rem;
 }
 
 .nav-links a {
-  padding: 6px 12px;
+  padding: 0.375rem 0.75rem;
   text-decoration: none;
   color: #818181;
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: background 0.3s ease-in-out;
-  border-radius: 6px;
+  border-radius: 0.375rem; 
   cursor: pointer;
   border: none;
   outline: none;
@@ -46,41 +46,72 @@ class NavBar extends HTMLElement {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem; 
 }
 
 .nav-links a:hover {
   background-color: #f5f5f5;
 }
+
 .auth-buttons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem; 
 }
+
 .sign-in {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #555;
   text-decoration: none;
   transition: background 0.3s ease-in-out;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
 }
 
 .sign-in:hover {
   background: #ececec;
 }
+
 .sign-up {
   background: black;
   color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 0.375rem 0.75rem; 
+  border-radius: 0.375rem;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875rem; 
   transition: background 0.3s ease-in-out;
 }
+
 .sign-up:hover {
   background: #333;
 }
+
+@media (max-width: 768px) {
+  .contenedornavbar {
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    gap: 0.625rem; /* 10px */
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 0.625rem; /* 10px */
+  }
+}
+
 </style>
 <nav class="contenedornavbar" id="contenedornavbar">
       <div class="nav-left">

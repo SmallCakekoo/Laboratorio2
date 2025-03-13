@@ -5,72 +5,71 @@ class CardMedium extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
       <style>
-      
 .card-medium {
-  width: 370px; 
+  width: 25rem;
+  margin: 1rem;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
   font-family: Century Gothic, sans-serif;
-  margin: 15px;
   display: flex;
   flex-direction: column;
 }
 
 .card img {
- width: 100%; 
-  height: 180px;
-  object-fit: cover; 
-
+  width: 100%;
+  height: 11.25rem;
+  object-fit: cover;
 }
 
 .card-content {
-  padding: 15px;
+  padding: 0.9375rem;
 }
 
 .category {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: gray;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
-  margin: 5px 0;
+  margin: 0.3125rem 0;
 }
 
 .description {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: gray;
-  padding-bottom: 25px;
+  padding-bottom: 1.5625rem;
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #eee;
-  padding: 20px 15px;
+  border-top: 0.0625rem solid #eee;
+  padding: 1.25rem 0.9375rem;
 }
 
 .author {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .author img {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-right: 0.3125rem;
 }
 
 .date {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: gray;
 }
+
       </style>
 
       <div class="card-medium">

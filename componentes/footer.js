@@ -11,75 +11,119 @@ export default class FooterComponent extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <style>
-        :host {
-          display: block;
-          font-family: Arial, sans-serif;
-          padding: 20px;
-          padding-top:100px;
-          background: #f8f9fa;
-          border-top: 1px solid #ddd;
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  padding: 1.25rem;
+  padding-top: 6.25rem;
+  padding-bottom: 5rem;
+  background: #f8f9fa;
+  border-top: 0.0625rem solid #ddd;
+}
 
-        }
-        .footer-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-           margin: 0 auto;
-           max-width: 63%;
-        }
-        .newsletter {
-          max-width: 300px;
-        }
-        .newsletter h3 {
-          margin: 15px 0;
-          font-size: 16px;
-        }
-        .newsletter p {
-          font-size: 14px;
-          color: #555;
-        }
-        .email-input {
-          display: flex;
-          gap: 5px;
-          margin-top: 10px;
-        }
-        .email-input input {
-          flex: 1;
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-        }
-        .email-input button {
-          padding: 8px 12px;
-          border: none;
-          background: black;
-          color: white;
-          border-radius: 5px;
-          cursor: pointer;
-        }
-        .links {
-          display: flex;
-          gap: 100px;
-        }
-        .links div {
-          display: flex;
-          flex-direction: column;
-        }
-        .links a {
-          text-decoration: none;
-          color: #555;
-          font-size: 14px;
-          margin: 5px 0;
-        }
-        .social-icons {
-          display: flex;
-          gap: 10px;
-        }
-        .social-icons a {
-          text-decoration: none;
-          font-size: 18px;
-        }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0rem 5rem 0rem 5rem;
+}
+
+.newsletter {
+  max-width: 18.75rem;
+}
+
+.newsletter h3 {
+  margin: 0.9375rem 0;
+  font-size: 1rem;
+}
+
+.newsletter p {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.email-input {
+  display: flex;
+  gap: 0.3125rem;
+  margin-top: 0.625rem;
+}
+
+.email-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+}
+
+.email-input button {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.links div {
+  display: flex;
+  flex-direction: column;
+}
+
+.links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.875rem;
+  margin: 0.3125rem 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .newsletter {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .email-input {
+    flex-direction: column;
+    align-items: center;
+  }
+  .email-input input {
+    width: 100%;
+  }
+  .email-input button {
+    width: 100%;
+  }
+}
+
       </style>
       <div class="footer-container">
         <div class="newsletter">

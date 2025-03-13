@@ -10,7 +10,7 @@ export default class NewsCard extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch('../data/cards.json');
+      const response = await fetch('./data/cards.json');
       const newsData = await response.json();
       this.render(newsData.articles);
     } catch (error) {
@@ -21,56 +21,52 @@ export default class NewsCard extends HTMLElement {
   render(articles = []) {
     this.shadowRoot.innerHTML = `
       <style>
-        :host {
-          display: block;
-          font-family: 'Inter', sans-serif;
-          max-width : 65%;
-          margin: 0 auto;
-        }
-        .news-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-          gap: 50px;
-        }
-        .news-card {
-          background: white;
-          padding: 25px;
-          border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-        }
-        .category {
-          font-size: 13px;
-          color: #777;
-        }
-        .title {
-          font-size: 19px;
-          font-weight: bold;
-          margin: 10px 0;
-        }
-        .description {
-          font-size: 14px;
-          color: #555;
-          margin: 5px 0;
-        }
-        .footer {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-top: 10px;
-          font-size: 12px;
-          color: #777;
-        }
-        .authors {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-        .authors img {
-          width: 28px;
-          height: 28px;
-          border-radius: 50%;
-        }
+:host {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31.25rem, 1fr)); 
+}
+
+.news-card {
+  background: white;
+  padding: 1.5625rem; 
+  border-radius: 0.625rem; 
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-size: 0.8125rem; 
+  color: #777;
+}
+
+.title {
+  font-size: 1.1875rem;
+  font-weight: bold;
+  margin: 0.625rem 0;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0.3125rem 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.625rem; 
+  font-size: 0.75rem;
+  color: #777;
+
       </style>
       <div class="news-container">
         ${articles.map(article => `

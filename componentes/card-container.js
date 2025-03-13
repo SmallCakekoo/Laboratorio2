@@ -8,27 +8,26 @@ export default class CardContainer extends HTMLElement {
     console.log("Componente creado");
     this.shadowRoot.innerHTML = `
         <style>
-       .grid-container {
+ .grid-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 0.3125rem; 
+  padding: 1.25rem; 
   justify-content: center;
   align-items: center;
-  max-width: 1000px;
   margin: auto;
 }
 
 .top-row {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem; 
   justify-content: center;
   width: 100%;
 }
 
 .bottom-row {
   display: flex;
-  gap: 1px;
+  gap: 0.0625rem;
   justify-content: center;
   width: 100%;
 }
@@ -36,17 +35,16 @@ export default class CardContainer extends HTMLElement {
 .small-cards {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem; 
 }
 
-
-/* Ajustes responsivos */
-@media (max-width: 800px) {
+@media (max-width: 50rem) {
   .top-row,
   .bottom-row {
     flex-direction: column;
   }
 }
+
 
         </style>
         <div class="grid-container">

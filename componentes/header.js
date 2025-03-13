@@ -8,9 +8,8 @@ class MainHeader extends HTMLElement {
 <style>
 .container {
   font-family: helvetica, arial, sans-serif;
-  max-width: 64%;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 5px;
 }
 
 h1 {
