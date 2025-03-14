@@ -125,9 +125,7 @@ class CardLarge extends HTMLElement {
                   .join("")}
               </div>
               <div class="names">
-                ${article.authors
-                  .map((author) => `<span>${author.name}</span>`)
-                  .join(", ")}
+               ${article.authors.map((author) => author.name).join(" & ")}
               </div>
             </div>
           </div>
